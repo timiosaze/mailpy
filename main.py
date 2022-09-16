@@ -24,7 +24,7 @@ html = list()
 for db in dbs:
     st = db[0].capitalize()
     # print(st)
-    cnx = create_engine('mysql+pymysql://root:password@localhost/' + db[1]) 
+    cnx = create_engine('mysql+pymysql://python:password@localhost/' + db[1]) 
 
     sql = """SELECT DATE_FORMAT(created_at, '%%W %%d, %%M %%Y'), COUNT(*) AS number_of_records FROM properties GROUP BY DATE_FORMAT(created_at, '%%W %%d, %%M %%Y')"""
     df = pd.read_sql(sql,cnx)
