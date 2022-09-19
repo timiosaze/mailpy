@@ -10,7 +10,7 @@ from email.mime.multipart import MIMEMultipart
 port = 465
 
 user = 'timilthomas2018@gmail.com'
-password = 'qjxqzaluvbfsnnbv'    
+password = 'zemiglhungaiugen'    
 msg = MIMEMultipart()
 
 # Do you think I should add a context? default one throws another exception 
