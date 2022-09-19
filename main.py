@@ -26,7 +26,7 @@ for db in dbs:
     # print(st)
     cnx = create_engine('mysql+pymysql://python:password@localhost/' + db[1]) 
 
-    sql = """SELECT DATE_FORMAT(created_at, '%%W %%d, %%M %%Y'), COUNT(*) AS number_of_records FROM properties GROUP BY DATE_FORMAT(created_at, '%%W %%d, %%M %%Y')"""
+    sql = """SELECT DATE_FORMAT(created_at, '%%W %%d, %%M %%Y'), COUNT(*) AS number_of_records FROM properties WHERE DATE(created_at) = CURDATE() - INTERVAL 1 DAY GROUP BY DATE_FORMAT(created_at, '%%W %%d, %%M %%Y')"""
     df = pd.read_sql(sql,cnx)
     df = df.rename(columns={"DATE_FORMAT(created_at, '%W %d, %M %Y')":"Date"})
     # print("")
@@ -80,7 +80,7 @@ msg.attach(part2)
 
 
 server = smtplib.SMTP_SSL('smtp.gmail.com', port=port, context=context) 
-# server.set_debuglevel(1)
+server.set_debuglevel(1)
 server.login(user, password)
 server.sendmail(user, ['timiade1993@gmail.com', 'francollimassociates@gmail.com'], msg.as_string())
 
