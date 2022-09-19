@@ -26,7 +26,7 @@ for db in dbs:
     # print(st)
     cnx = create_engine('mysql+pymysql://python:password@localhost/' + db[1]) 
 
-    sql = """SELECT DATE_FORMAT(created_at, '%%W %%d, %%M %%Y'), COUNT(*) AS number_of_records FROM properties WHERE DATE(created_at) = CURDATE() GROUP BY DATE_FORMAT(created_at, '%%W %%d, %%M %%Y')"""
+    sql = """SELECT DATE_FORMAT(created_at, '%%W %%d, %%M %%Y'), COUNT(*) AS number_of_records FROM properties GROUP BY DATE_FORMAT(created_at, '%%W %%d, %%M %%Y')"""
     df = pd.read_sql(sql,cnx)
     df = df.rename(columns={"DATE_FORMAT(created_at, '%W %d, %M %Y')":"Date"})
     # print("")
