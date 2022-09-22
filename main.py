@@ -16,7 +16,7 @@ msg = MIMEMultipart()
 # Do you think I should add a context? default one throws another exception 
 # of invalid authentication, as the server is talking 'with itself'
 context = None
-dbs  = [['homegate.ch', 'homegatedb'],['immoscout.ch', 'immoscoutdb'],['comparis.ch','comparisdb']]
+dbs  = [['homegate.ch', 'homegatedb'],['immoscout.ch', 'immoscoutdb'],['comparis.ch','comparisdb'],['flatfox.ch','flatfoxdb']]
 
 ls = list()
 text = list()
