@@ -62,7 +62,7 @@ html_2 =  """\
 """
 
 configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['api-key'] = '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'
+configuration.api_key['api-key'] = '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'
 
 api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
 subject = "New Records in Database(yesterday)"
