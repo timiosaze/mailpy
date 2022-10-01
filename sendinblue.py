@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 import pymysql
 
 
-dbs  = [['homegate.ch', 'homegatedb'],['immoscout.ch', 'immoscoutdb'],['comparis.ch','comparisdb'],['flatfox.ch','flatfoxdb']]
+dbs  = [['homegate.ch', 'homegatedb'],['immoscout.ch', 'immoscoutdb'],['comparis.ch','comparisdb'],['flatfox.ch','flatfoxdb'], ['Immoscoutde','immoscoutdedb']]
 
 ls = list()
 text = list()
